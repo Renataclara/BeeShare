@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "unified-ring-178117",
+  "private_key_id": "8a9506e344df3158ce0130bfc087c25833bc326f",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEuwIBADANBgkqhkiG9w0BAQEFAASCBKUwggShAgEAAoIBAQDUgevCGNxoTLbc\nLxRNgwuKpHOLAXGYEsLuW44wLdkpYhfWvVdH6mTwbMGzbu8ZNgbGfC1znfXjGb7R\nqtYbAiECIP8bseu7LYmkGXoGC5aSBP7Z/IzUeyEQZXNkOZ0SR5Yuw7E11OEKgeWw\nn8l7lJlIUljRLm95DHn2VKVfZwOmZfhBGFV9v89L12CMmHYgkl+5oOiyrAh+yNfF\nnSi8u4phFTizmwQ5bmaBGgqCA7f+pUGsJTnOGbWrarcAkIaTvilYcKaa6eX7jkvZ\ntXHeoU3DzAjDKLa8Q892ggiZJVGHa5BXOxxKe618gNWHJ7FJND7BGykbMhuvH/sa\nYm1ZkSIhAgMBAAECgf8fpw2YTSuto8xfSR2B2usOxr/1cuZm+4rQn6jmJ24ZNxf/\ngrEYo4kbzP2gRGQvIfHDm4UJm5WfmTSBXMWkI2tw1CL4QeAWDHDCYikSwKPrMmNJ\n0Zw7nSHa11sz3bQ2BmoQPR9Zuh03yD4pUlbCDLg07xvbmUo+G+Wh4BAumm5CWNhn\nXiRQaPVZ4UxrdWqFR9Z4Kwo2BsJYBAMn9OJchBgQdbSkfrRx9EFtXqlYgaCFJkwa\nnB9sZvGXqYwCcASttq0D57x1nQ/PB0HlPiHt8uHyf4Q1rAAAZwwRx1VdCo8UUYHc\n2cgVA9mZkAlWiHerg8qn9hz2F46BcY94/uI9gAECgYEA6UKlEmWYxQm++nvvMTf/\nUiE0wnHjOUTKENOc+ctG6h19vTA0HeNYsgNKyjEWlGSW05mKZ2F57CSPAQNu4e3d\n2rLSlYBJYVDjliVPHw5jX8hbaSF6AWlqRPjG84T1esQP7BPQTF8zmS5uCu5Wx6Py\nUaGATor2w+3k+iD3H7sSoiECgYEA6Tlb1ejZzs9TxnL31HfOn1LQCVs8ZoaS8Jd9\nwHeEc2o2NeKl5kbrMcjKVWbrZEt0JqHks+fHUxE+uZOp097wLjpTfmVxwhLAwbaU\nthxGEpksIt+RheB9qA0wFxqmmr9QfGbyLDit3pRl4XX7zSJK3qyyhCQGBDo+CvpN\nLLuugAECgYAtAZviCdJJKlE7+U+0em58BUYtwlWqRhiK2JmwJMWhBGGvcC6OGcCS\nUEpM6t3Fcgcb+sMWoVsp8f/ZnTT2yLOGr/wrtl3yNe5DmR1EC72mzHy+syPcQ9+q\nQSn58IyAzHWaAlStd6z4AFphJ4185agqkfO0s+Fa+nq0vEmSSMEWoQKBgQDi52Q6\nxHWMKNgXvejyNLG4/mfagoJMOWeiXbEB3QXnCBG/8Ud4t8zBPdnkpuIjTOmvYFjS\n05Bwd9mv0UMsF71TLHnpAidgKsCQduNOHknqdE2ljB/XwWZfZp1ADTTEX5edwMai\nUW6Pm49XgGM/27o91IVF3Iph+Iw+P/FvsRWAAQKBgC98cl/157G4jHn/2V6LfOIM\n07ZcjLcLR9pMH/Qi4xV47rLaPk+EO5RzlcAzJRkE5jGr1zqeJmSJCujWphj9Scfu\nM8Pfji1cY3XEmfH2MkuAigFfpA2gdqTtfIB8FFPBJMWfczXXa2OzPUYUgojZJGts\n2TJT1aRsgdSrbf6JvgQW\n-----END PRIVATE KEY-----\n",
+  "client_email": "beeshare@unified-ring-178117.iam.gserviceaccount.com",
+  "client_id": "116488461595047343716",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/beeshare%40unified-ring-178117.iam.gserviceaccount.com"
+}
