@@ -1,23 +1,23 @@
 'use strict'
 
-const Book = require('../models/Posting')
+const Post = require('../models/Posting')
 // var mongoose = require('mongoose');
 const ObjectId = require('mongodb').ObjectId;
 // http://mongoosejs.com/docs/api.html#model-js
 module.exports = {
 
   findAll: function (req,res) {
-    Book.find()
+    Post.find()
     .then(data => res.send(data))
     .catch(err => res.send(err))
   },
   findOne: function (req,res) {
-    Book.find({_id: ObjectId(`${req.params.id}`)})
+    Post.find({_id: ObjectId(`${req.params.id}`)})
     .then(data => res.send(data))
     .catch(err => res.send(err))
   },
   delete: function (req,res) {
-    Book.deleteOne({_id: ObjectId(`${req.params.id}`)})
+    Post.deleteOne({_id: ObjectId(`${req.params.id}`)})
     .then(data => res.send(data))
     .catch(err => res.send(err))
   }
