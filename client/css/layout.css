@@ -1,0 +1,53 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* grid-gap: 25px; */
+  padding-left: 300px;
+}
+
+.top {
+  grid-column: 1/5;
+  grid-row: 1;
+  align-self: start;
+  display: block;
+  align-items: center;
+  /* background-color: red; */
+  /* filter: blur(5px); */
+}
+
+.item {
+  grid-column: 1/5;
+  grid-row: 2/3;
+  align-self: center;
+  display: block;
+  /* background-color: blue; */
+  /* filter: blur(5px); */
+}
+
+.foot {
+  grid-column: 1/5;
+  grid-row: 3;
+  align-self: center;
+  display: block;
+  /* background-color: orange; */
+  /* filter: blur(5px); */
+}
+
+#container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 20px;
+}
+
+.container-item {
+  overflow: hidden;
+  justify-self: center;
+  align-self: center;
+}
+body {
+  background-color: whitesmoke;
+}
+.card-content {
+  height: 100px;
+  overflow: hidden
+}
