@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="css/layout.css">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <title>BeeShare</title>
+  <!--JQUERY-->
+  <script>
+    $('.button-collapse').sideNav({
+      draggable: true, // Choose whether you can drag to open on touch screens,
+    });
+    $(document).ready(function () {
+      // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+      $('.modal').modal();
+    });
+  </script>
+</head>
+
+<body>
+  <div class="wrapper" id="vue">
+    <div class="top" align=center>
+      <div class="card-panel yellow accent-4"><img src="./assets/logo.jpg" alt=""></div>
+    </div>
+    <ul id="slide-out" class="side-nav fixed yellow accent-2">
+      <li>
+        <div class="user-view">
+          <div class="background" style="background-color: white">
+          </div>
+          <a href="#!user"><img class="circle" src="./assets/logo.jpg"></a>
+          <a href="#!name"><span class="black-text name">John Doe</span></a>
+          <a href="#!email"><span class="black-text email">jdandturk@gmail.com</span></a>
+        </div>
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons">person</i><i class="material-icons right">arrow_drop_down</i></a></li>
+        <ul id='dropdown1' class='dropdown-content'>
+          <li><a href="#!">First</a></li>
+          <li><a href="#!">Second</a></li>
+          <li><a href="#!">Third</a></li>
+          <li><a href="#!">Fourth</a></li>
+        </ul>
+      </li>
+      <div class="divider"></div>
+      <li><a class="waves-effect" href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+      <li><a class="waves-effect" href="#!">Second Link</a></li>
+    </ul>
+    <div class="item">
+      <div class="row">
+        <div class="card-panel white" id="container">
+
+          <div class="container-item">
+            <div class="card">
+              <div class="card-image">
+                <img src="./assets/logo.jpg">
+                <span class="card-title">Card Title</span>
+                <a class="btn-floating halfway-fab waves-effect btn-large waves-light yellow accent-2 modal-trigger" href="#modal1"><i class="material-icons">more_horiz</i></a>
+              </div>
+              <div class="card-content">
+                <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require
+                  little markup to use effectively.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <footer class="page-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 class="white-text">Footer Content</h5>
+              <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+              <h5 class="white-text">Links</h5>
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <div class="container">
+            © 2014 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <div id="modal1" class="modal bottom-sheet">
+      <div class="modal-content">
+        <h4>Modal Header</h4>
+        <p>A bunch of text</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+      </div>
+    </div>
+    <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+      <a class="btn-floating btn-large yellow accent-2">
+            <i class="material-icons">mode_edit</i>
+          </a>
+      <ul>
+        <li><a class="btn-floating red" style="transform: scaleY(0.4) scaleX(0.4) translateY(40px) translateX(0px); opacity: 0;"><i class="material-icons">insert_chart</i></a></li>
+        <li><a class="btn-floating yellow darken-1" style="transform: scaleY(0.4) scaleX(0.4) translateY(40px) translateX(0px); opacity: 0;"><i class="material-icons">format_quote</i></a></li>
+        <li><a class="btn-floating green" style="transform: scaleY(0.4) scaleX(0.4) translateY(40px) translateX(0px); opacity: 0;"><i class="material-icons">publish</i></a></li>
+        <li><a class="btn-floating blue" style="transform: scaleY(0.4) scaleX(0.4) translateY(40px) translateX(0px); opacity: 0;"><i class="material-icons">attach_file</i></a></li>
+      </ul>
+    </div>
+  </div>
+</body>
+
+</html>
