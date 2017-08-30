@@ -35,17 +35,15 @@ router.get('/users', userController.findAll);
 router.post('/signup', userController.signup);
 router.post('/signin', userController.signin);
 router.put('/user/:id', userController.update);
-
 router.get('/users', userController.findAll);
-
 router.delete('/users/:id', userController.destroy);
 
-var bookController = require('../controllers/categoryController');
+var postController = require('../controllers/categoryController');
 /* GET users listing. */
 // router.put('/:id', userController.update);
-router.get('/posting', bookController.findAll);
-router.get('/posting/:id', bookController.findOne);
-router.delete('/posting/:id', bookController.delete);
+router.get('/posting', postController.findAll);
+router.get('/posting/:id', postController.findOne);
+router.delete('/posting/:id', postController.delete);
 
 
 module.exports = router

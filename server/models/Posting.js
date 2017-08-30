@@ -6,9 +6,11 @@ var Schema = mongoose.Schema
 //http://mongoosejs.com/docs/populate.html
 var PostingSchema = new Schema({
     userid: { type: Schema.Types.ObjectId, ref: 'User' },
-    title: String,
+    name: String,
     description: String,
     imgurl: String,
+    views: Number,
+    download: Number
 });
 
 //create model
