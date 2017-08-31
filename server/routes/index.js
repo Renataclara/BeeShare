@@ -9,7 +9,8 @@ const Posting = require('../models/Posting')
 router.get('/', (req, res, next) => {
   res.send({ message: 'Welcome Buddy!' })
 })
-router.post('/upload', auth.checkLogin,
+// auth.checkLogin
+router.post('/upload', 
   images.multer.single('file'),
   images.sendUploadToGCS,
   (req, res) => {
