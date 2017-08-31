@@ -16,6 +16,8 @@ const getPublicUrl = (filename) => {
 }
 
 const sendUploadToGCS = (req, res, next) => {
+  console.log('ini req file lg',req.file);
+  console.log('ini req body lg',req.body);
   if (!req.file) {
     return next()
   }

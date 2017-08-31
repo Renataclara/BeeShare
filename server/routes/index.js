@@ -23,13 +23,7 @@ router.post('/upload', auth.checkLogin,
   userid: req.headers.id
   })
   .then(data => res.send(data))
-    res.send({
-      status: 200,
-      message: 'Your file is successfully uploaded',
-      link: req.file.cloudStoragePublicUrl
-    })
-  })
-
+})
 
 var userController = require('../controllers/userController');
 
