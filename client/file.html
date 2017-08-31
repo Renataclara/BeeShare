@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script>
+    (function () {
+      if (localStorage.getItem('token') == undefined || !localStorage.getItem('token')) {
+        window.location.href = 'index.html'
+      }
+    })()
+  </script>
+  <script src="https://unpkg.com/vue"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <link rel="stylesheet" href="css/layout.css">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <title>BeeShare</title>
+  <!--JQUERY-->
+  <script>
+    $('.button-collapse').sideNav({
+      draggable: true, // Choose whether you can drag to open on touch screens,
+    });
+    $(document).ready(function () {
+      // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+      $('.modal').modal();
+    });
+  </script>
+</head>
+
+<body>
+  <div id="app">
+    <div class="wrapper">
+      <div class="top" align=center>
+        <div class="card-panel yellow accent-4"><img src="./assets/logo.jpg" alt=""></div>
+      </div>
+      <ul id="slide-out" class="side-nav fixed yellow accent-2">
+        <li>
+          <div class="user-view">
+            <div class="background" style="background-color: white">
+            </div>
+            <a href="#!user"><img class="circle" src="./assets/logo.jpg"></a>
+            <a href="#!name"><span class="black-text name">{{nama}}</span></a>
+            <a href="#!email"><span class="black-text email">File Storage</span></a>
+          </div>
+          <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons">person</i><i class="material-icons right">arrow_drop_down</i></a></li>
+          <ul id='dropdown1' class='dropdown-content'>
+            <li><a v-on:click="logout">Log Out</a></li>
+          </ul>
+        </li>
+        <div class="divider"></div>
+      </ul>
+      <div class="item">
+        <div class="row">
+          <div class="card-panel white" id="container">
+            <div class="container-item" v-for="(data, idx) in lists">
+              <div class="card">
+                <div class="card-image">
+                  <img v-bind:src="getimage(data)">
+                  <span class="card-title"></span>
+                  <a class="btn-floating halfway-fab waves-effect btn-large waves-light yellow accent-2 modal-trigger" v-on:click="getcode(idx)"
+                    href="#modal1"><i class="material-icons">more_horiz</i></a>
+                </div>
+                <div class="card-content">
+                  <p>{{data.name}}</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="foot">
+        <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+              © 2014 Copyright Text
+              <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+          </div>
+        </footer>
+      </div>
+      <div id="modal1" class="modal bottom-sheet">
+        <div class="modal-content">
+          <div class="card-panel grey">
+            <span class="white-text" id="clipboard">
+            {{code}}
+          </span>
+          </div>
+          <a class="waves-effect waves-light btn-large" onclick="copyToClipboard('#clipboard')"><i class="material-icons right">share</i>Share</a>
+          <a class="waves-effect waves-light btn-large" v-bind:href="code"><i class="material-icons right">file_download</i>Download</a>
+        </div>
+      </div>
+      <div id="upload" class="modal bottom-sheet">
+        <div class="modal-content">
+          <span class="black-text">
+            <div class="container">
+              <form action="#">
+                <h3>Upload File</h3>
+                <div class="file-field input-field">
+                  <div class="btn yellow accent-2">
+                    <span>File</span>
+          <input type="file" @change="appendfile">
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12">
+          <div class="input-field">
+            <input id="filename" type="text" v-model="files.name">
+            <label for="filename" data-error="wrong" data-success="right">File Name</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12">
+          <div class="input-field">
+            <input id="desc" type="text" v-model="files.desc">
+            <label for="desc" data-error="wrong" data-success="right">File Description</label>
+          </div>
+        </div>
+      </div>
+      <button class="btn waves-effect waves-light yellow accent-2" v-on:click="uploadfile()" type="submit" name="action">Submit
+                       <i class="material-icons right">send</i>
+                     </button>
+      </form>
+    </div>
+    </span>
+
+  </div>
+  </div>
+  <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+    <a class="btn-floating btn-large yellow accent-2 modal-trigger" href="#upload">
+            <i class="material-icons">file_upload</i>
+          </a>
+  </div>
+  </div>
+  </div>
+</body>
+
+<script src="./assets/index.js"></script>
+<script>
+  function copyToClipboard(element) {
+    Materialize.toast('Link Copied  ', 4000)
+    var $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val($(element).text()).select();
+    document.execCommand("copy");
+    $temp.remove();
+  }
+</script>
+
+</html>
