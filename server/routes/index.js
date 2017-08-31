@@ -23,8 +23,6 @@ router.post('/upload', auth.checkLogin,
   userid: req.headers.id
   })
   .then(data => res.send(data))
-    res.send(data)
-  })
 
 
 var userController = require('../controllers/userController');
