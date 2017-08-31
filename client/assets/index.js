@@ -101,12 +101,12 @@ new Vue ({
           id: this.userid
         }
       })
+      .then(datas => {
+        this.lists.push(data)
+      })
       this.files.file = '',
       this.files.name = '',
       this.files.desc = ''
-        .then(datas => {
-          this.lists.push(data)
-      })
       .catch(err => console.log(err))
     },
     signup() {
