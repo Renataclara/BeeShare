@@ -19,8 +19,8 @@ router.post('/upload',
   name: req.body.name,
   imgurl: req.file.cloudStoragePublicUrl,
   description: req.body.description,
-  type: ext[ext.length-1]
-  // ,userid: req.headers.id
+  type: ext[ext.length-1],
+  userid: req.headers.id
   })
   .then(data => res.send(data))
     res.send({

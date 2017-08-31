@@ -8,11 +8,13 @@ module.exports = {
 
   findAll: function (req,res) {
     Post.find()
+    .populate('userid')
     .then(data => res.send(data))
     .catch(err => res.send(err))
   },
   findOne: function (req,res) {
     Post.find({_id: ObjectId(`${req.params.id}`)})
+    .populate('userid')
     .then(data => {
       var updateView = {views: data[0].views + 1}
       Post.update({_id: ObjectId(`${req.params.id}`)}, { $set: updateView})
