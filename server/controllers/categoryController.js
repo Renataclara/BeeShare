@@ -38,17 +38,17 @@ module.exports = {
         res.send('download counter added')
       })
     })
+  },
+
+  update: function (req,res) {
+    Post.updateOne({_id: ObjectId(`${req.params.id}`)},
+        { $set:
+          {
+            name : req.body.name,
+            description: req.body.description
+          }
+    })
+    .then(data => res.send(data))
+    .catch(err => res.send(err))
   }
-  // ,update: function (req,res) {
-  //   Book.updateOne({_id: ObjectId(`${req.params.id}`)},
-  //       { $set:
-  //         {
-  //           categoryid : req.body.categoryid,
-  //           name: req.body.name,
-  //           imgurl: req.body.imgurl
-  //         }
-  //   })
-  //   .then(data => res.send(data))
-  //   .catch(err => res.send(err))
-  // }
 }

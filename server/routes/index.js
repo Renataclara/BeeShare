@@ -42,7 +42,7 @@ router.delete('/users/:id', userController.destroy);
 
 var postController = require('../controllers/categoryController');
 /* GET users listing. */
-// router.put('/:id', userController.update);
+router.put('/posting/:id', postController.update);
 router.get('/posting', postController.findAll);
 router.post('/posting/:id', postController.dCounter);
 router.get('/posting/:id', postController.findOne);
