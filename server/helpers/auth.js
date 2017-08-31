@@ -2,16 +2,20 @@ const jwt = require('jsonwebtoken')
 require('dotenv').config()
 
 const checkLogin = (req,res,next) => {
-  jwt.verify(req.headers.token, 'renata', (err,decoded) => {
-    if(err) {res.send(err)}
-    else {
-      console.log('ini decoded >>', decoded);
-      req.decoded = decoded
-      if(decoded) {
-        next()
-      } else {res.send('ditolak gan')}
-    }
-  }) //token = Authorization
+  if(req.headers.token == undefined) {
+    res.send('not authorize')
+  } else {
+    jwt.verify(req.headers.token, 'renata', (err,decoded) => {
+      if(err) {res.send(err)}
+      else {
+        console.log('ini decoded >>', decoded);
+        // req.decoded = decoded
+        if(decoded) {
+          next()
+        } else {res.send('ditolak gan')}
+      }
+    }) //token = Authorization
+  }
 }
 
 // const checkAdmin = (req,res,next) => {
