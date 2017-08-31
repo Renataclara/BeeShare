@@ -9,6 +9,7 @@ var PostingSchema = new Schema({
     name: String,
     description: String,
     imgurl: String,
+    type: String,
     views: {type: Number, default: 0},
     download: {type: Number, default: 0}
 });

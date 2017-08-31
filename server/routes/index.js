@@ -14,10 +14,12 @@ router.post('/upload',
   images.sendUploadToGCS,
   (req, res) => {
     // masukin monggose
+  var ext = req.file.cloudStoragePublicUrl.toString().split('.')
   Posting.create({
   name: req.body.name,
   imgurl: req.file.cloudStoragePublicUrl,
-  description: req.body.description
+  description: req.body.description,
+  type: ext[ext.length-1]
   // ,userid: req.headers.id
   })
   .then(data => res.send(data))
@@ -42,6 +44,7 @@ var postController = require('../controllers/categoryController');
 /* GET users listing. */
 // router.put('/:id', userController.update);
 router.get('/posting', postController.findAll);
+router.post('/posting/:id', postController.dCounter);
 router.get('/posting/:id', postController.findOne);
 router.delete('/posting/:id', postController.delete);
 
