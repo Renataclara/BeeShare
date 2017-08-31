@@ -29,6 +29,12 @@ new Vue ({
     getcode(id) {
       this.code = this.lists[id].imgurl
     },
+    tambahviews(id){
+      axios.get(`http://api.beeshare.web.id/posting/${id}`)
+    },
+    tambahdownload(id){
+      axios.get(`http://api.beeshare.web.id/posting/${id}`)
+    },
   getdata() {
       console.log('test');
       axios.get(`http://api.beeshare.web.id/posting/user/${this.userid}`)
