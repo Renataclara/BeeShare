@@ -47,7 +47,7 @@
             </div>
             <a href="/file2.html"><img class="circle" src="./assets/logo.jpg"></a>
             <a href="/file.html"><span class="black-text name">{{nama}}</span></a>
-            <a href="#!email"><span class="black-text email">My Storage</span></a>
+            <a href="#!email"><span class="black-text email">File Storage</span></a>
           </div>
           <li><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons">person</i><i class="material-icons right">arrow_drop_down</i></a></li>
           <ul id='dropdown1' class='dropdown-content'>
@@ -59,7 +59,7 @@
       <div class="item">
         <div class="row">
           <div class="card-panel white" id="container">
-            <div class="container-item" v-for="(data, idx) in lists">
+            <div class="container-item" v-for="(data, idx) in alllists">
               <div class="card">
                 <div class="card-image">
                   <img v-bind:src="getimage(data)">

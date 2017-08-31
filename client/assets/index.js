@@ -3,6 +3,7 @@ new Vue ({
   el: '#app',
   data: {
     lists: [],
+    alllists:[],
     code: '',
     files: {
       file: '',
@@ -26,7 +27,7 @@ new Vue ({
   },
   methods: {
     getcode(id) {
-      this.code = this.lists[id].imgurl 
+      this.code = this.lists[id].imgurl
     },
   getdata() {
       console.log('test');
@@ -37,6 +38,15 @@ new Vue ({
       })
       .catch(err => res.send(err))
     },
+    getdataAll() {
+        console.log('test');
+        axios.get(`http://api.beeshare.web.id/posting`)
+        .then(Response => {
+          this.alllists = Response.data
+          console.log(this.alllists);
+        })
+        .catch(err => res.send(err))
+      },
   getimage(data) {
       console.log(data);
       if (data.type == 'jpg') {
@@ -137,6 +147,7 @@ new Vue ({
     }
   },
   created: function() {
-    this.getdata()
+    this.getdata();
+    this.getdataAll();
   }
 })
