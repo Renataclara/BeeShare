@@ -10,7 +10,7 @@ router.get('/', (req, res, next) => {
   res.send({ message: 'Welcome Buddy!' })
 })
 // auth.checkLogin
-router.post('/upload', 
+router.post('/upload', auth.checkLogin,
   images.multer.single('file'),
   images.sendUploadToGCS,
   (req, res) => {
@@ -37,7 +37,7 @@ router.delete('/users/:id', userController.destroy);
 
 var postController = require('../controllers/categoryController');
 /* GET users listing. */
-router.put('/posting/:id', postController.update);
+router.put('/posting/:id', auth.checkLogin, postController.update);
 router.get('/posting', postController.findAll);
 router.post('/posting/:id', postController.dCounter);
 router.get('/posting/:id', postController.findOne);
