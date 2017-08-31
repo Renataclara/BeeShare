@@ -53,7 +53,7 @@ module.exports = {
           // if (err) {res.send(err)}
           // req.headers.token = token
           console.log('lol da di sini', err, token);
-          res.send({token: token, id: row._id, name:row.name});
+          res.send({token: token, id: row._id, name:row.name, username:row.username});
         });
       } else {res.send('wrong password')}
     })

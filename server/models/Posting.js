@@ -9,6 +9,8 @@ var PostingSchema = new Schema({
     title: String,
     description: String,
     imgurl: String,
+    view: Number,
+    download: Number
 });
 
 //create model

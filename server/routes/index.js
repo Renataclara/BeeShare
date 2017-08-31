@@ -10,15 +10,15 @@ router.get('/', (req, res, next) => {
   res.send({ message: 'Welcome Buddy!' })
 })
 router.post('/upload',
-  images.multer.single('file'),
+  images.multer.single('filedata'),
   images.sendUploadToGCS,
   (req, res) => {
     // masukin monggose
   Posting.create({
   name: req.body.name,
   imgurl: req.file.cloudStoragePublicUrl,
-  description: req.body.description
-  // ,userid: req.headers.id
+  description: req.body.description,
+  userid: req.headers.id
   })
   .then(data => res.send(data))
     res.send({

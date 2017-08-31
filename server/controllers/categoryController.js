@@ -10,6 +10,7 @@ module.exports = {
     Book.find()
     .then(data => res.send(data))
     .catch(err => res.send(err))
+    .populate('userid');
   },
   findOne: function (req,res) {
     Book.find({_id: ObjectId(`${req.params.id}`)})
