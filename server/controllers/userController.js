@@ -58,7 +58,7 @@ module.exports = {
       } else {res.send('wrong password')}
     })
     .catch(function(err){
-      // res.send('user not found')
+      res.send('user not found')
     })
   },
   destroy: function (req,res) {
