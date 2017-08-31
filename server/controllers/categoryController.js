@@ -13,7 +13,13 @@ module.exports = {
   },
   findOne: function (req,res) {
     Post.find({_id: ObjectId(`${req.params.id}`)})
-    .then(data => res.send(data))
+    .then(data => {
+      var updateView = {views: data[0].views + 1}
+      Post.update({_id: ObjectId(`${req.params.id}`)}, { $set: updateView})
+      .then(()=> {
+        res.send(data)
+      })
+    })
     .catch(err => res.send(err))
   },
   delete: function (req,res) {
