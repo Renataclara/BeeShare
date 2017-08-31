@@ -26,6 +26,18 @@ module.exports = {
     Post.deleteOne({_id: ObjectId(`${req.params.id}`)})
     .then(data => res.send(data))
     .catch(err => res.send(err))
+  },
+  dCounter: function (req, res) {
+    Post.find({_id: ObjectId(`${req.params.id}`)})
+    .then(data => {
+      var downloadData = parseInt(data[0].download) + 1
+      Post.update({_id: ObjectId(`${req.params.id}`)}, { $set: {
+        download: downloadData
+      }})
+      .then(()=> {
+        res.send('download counter added')
+      })
+    })
   }
   // ,update: function (req,res) {
   //   Book.updateOne({_id: ObjectId(`${req.params.id}`)},
