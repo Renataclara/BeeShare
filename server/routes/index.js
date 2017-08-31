@@ -1,15 +1,15 @@
 'use strict'
 const express = require('express'),
       router = express.Router(),
-      images = require('../helpers/images')
-
+      images = require('../helpers/images'),
+      auth  = require('../helpers/auth')
 const Posting = require('../models/Posting')
 
 /* GET main endpoint. */
 router.get('/', (req, res, next) => {
   res.send({ message: 'Welcome Buddy!' })
 })
-router.post('/upload',
+router.post('/upload', auth.checkLogin,
   images.multer.single('file'),
   images.sendUploadToGCS,
   (req, res) => {
@@ -36,7 +36,7 @@ var userController = require('../controllers/userController');
 router.get('/users', userController.findAll);
 router.post('/signup', userController.signup);
 router.post('/signin', userController.signin);
-router.put('/user/:id', userController.update);
+router.put('/user/:id',auth.checkLogin, userController.update);
 router.get('/users', userController.findAll);
 router.delete('/users/:id', userController.destroy);
 
@@ -47,6 +47,7 @@ router.get('/posting', postController.findAll);
 router.post('/posting/:id', postController.dCounter);
 router.get('/posting/:id', postController.findOne);
 router.delete('/posting/:id', postController.delete);
+router.get('/posting/user/:id', postController.findByUserId);
 
 
 module.exports = router

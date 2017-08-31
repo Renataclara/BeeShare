@@ -52,5 +52,9 @@ module.exports = {
     })
     .then(data => res.send(data))
     .catch(err => res.send(err))
+  },
+  findByUserId: function(req,res) {
+    Post.find({userid: ObjectId(`${req.params.id}`)})
+    .then(result=>  res.send(result))
   }
 }
